@@ -55,52 +55,56 @@ const temperosGerais = []
 
 temperosGerais.push(tempero1,tempero2,tempero3,tempero4,tempero5,tempero6)
 
+// console.log(temperosGerais)
+
+const tempero = (obj) => {
+    console.log(`
+    - Tempero: ${obj.tempero.toUpperCase()};
+    - Média de preço na Feirinha: ${obj.mediaPreco} reais;
+    - É facilmente plantado na sua Hortinha? ${obj.horta};
+    - Pode ser muito bem combinado com os seguintes pratos: ${obj.combinacoes.join(", ")}.`)
+}
+
+tempero(tempero1)
+tempero(tempero2)
+tempero(tempero3)
+tempero(tempero4)
+tempero(tempero5)
+tempero(tempero6)
 
 
-// const tempero = (obj) => {
-//     console.log(`
-//     - Tempero: ${obj.tempero.toUpperCase()};
-//     - Média de preço na Feirinha: ${obj.mediaPreco} reais;
-//     - É facilmente plantado na sua Hortinha? ${obj.horta};
-//     - Pode ser muito bem combinado com os seguintes pratos: ${obj.combinacoes.join(", ")}.`)
-// }
 
-// tempero(tempero1)
-// tempero(tempero2)
-// tempero(tempero3)
-// tempero(tempero4)
-// tempero(tempero5)
-// tempero(tempero6)
+// let qualTempero = prompt("Digite qual tempero você busca:").toLowerCase()
 
 
+// const temperosDeHorta = temperosGerais.filter ((tempero) => {
+//         return tempero.tempero === qualTempero.toLowerCase()
+// })
 
-let qualTempero = prompt("Digite qual tempero você busca:").toLowerCase()
+// console.log(temperosDeHorta)
 
-const tempero = (arrayTempero,stringTempero) => {
-    for(let tempero of arrayTempero){
-        // console.log(tempero.tempero)
-        // console.log(stringTempero)
+
+// const tempero = (arrayTempero,stringTempero) => {
+//     for(let tempero of arrayTempero){
+//         if (stringTempero===tempero.tempero) {
+//             console.log(`
+//         Tempero: ${tempero.tempero.toUpperCase()};
+//         Média de preço na Feirinha: ${tempero.mediaPreco} reais;
+//         É facilmente plantado na sua Hortinha? ${tempero.horta};
+//         Pode ser muito bem combinado com os seguintes pratos: ${tempero.combinacoes.join(", ")}.`)
+//         } else {
+//             alert ("Nenhum item foi encontrado! :(")
+//         }
         
         
-        if (stringTempero===tempero.tempero) {
-            console.log(`
-        Tempero: ${tempero.tempero.toUpperCase()};
-        Média de preço na Feirinha: ${tempero.mediaPreco} reais;
-        É facilmente plantado na sua Hortinha? ${tempero.horta};
-        Pode ser muito bem combinado com os seguintes pratos: ${tempero.combinacoes.join(", ")}.`)
-        } else {
-            alert ("Nenhum item foi encontrado! :(")
-        }
         
-        
-        
-    }
+//     }
    
-    }
+//     }
 
 
 
-tempero(temperosGerais,qualTempero)
+// tempero(temperosGerais,qualTempero)
 
 
 
