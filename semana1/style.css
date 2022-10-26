@@ -46,19 +46,24 @@ button{
     justify-content: center;
     /* margin: 16px; */
     gap: 16px;
+    max-width: 1200px;
+    
 }
 
 
 li{
-    list-style: none
+    list-style: none;
+    margin-top: 6px;
 }
 
 input{
     position:relative;
+    min-width: 200px;
 }
 button{
     position:relative;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    min-width: 80px;
 }
 button:hover{
     background-color: maroon;
@@ -73,7 +78,10 @@ section{
     background-color: burlywood;
     width: 40vw;
     height: 60vh;
-    /* min-width: ; */
+    min-width: 300px; 
+    min-height: 420px;
+    max-height: 500px;
+    max-width:500px;
     border-radius: 10px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     
