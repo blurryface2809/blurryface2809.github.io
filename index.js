@@ -91,7 +91,7 @@ for(let i of temperosGerais){
     boxTempero.innerHTML += `
     <section>
     <ul> 
-    <li><a href=${i.link}><strong>${i.tempero.toUpperCase()}</strong></a></li>
+    <li><a target="_blank" href=${i.link}><strong>${i.tempero.toUpperCase()}</strong></a></li>
     <li><img src=${i.imagem} alt=${i.tempero} height="250vh" width="250vw" ></li>
     <li>Média de preço (100g) na feirinha: R$${i.mediaPreco},00 </li>
     <li>É facilmente plantada na sua Hortinha? ${i.horta ? "Sim!" : "Nem tanto, mais fácil comprar."} </li>
@@ -106,12 +106,14 @@ adicionaTemperos()
 
 const input = document.querySelector("#inputPesquisa")
 
-
 function buscarTemperos () {
     const filtro = temperosGerais.filter ((tempero) => {
-        // return input.value.toLowerCase() === tempero.tempero
-        return tempero.tempero.includes(input)
-    });
+        return tempero.tempero.includes(input.value.toLowerCase())
+        
+    })
+    console.log(filtro)
+
+
 
     if(input.value===""){
         alert ("Nenhum tempero foi pesquisado.")
@@ -119,17 +121,34 @@ function buscarTemperos () {
         alert ("Nenhum tempero foi encontrado.")
     }else{
         boxTempero.innerHTML = ""
-        boxTempero.innerHTML += `
-    <section>
-    <ul> 
-    <li><a href=${filtro[0].link}><strong>${filtro[0].tempero.toUpperCase()}</strong></a></li>
-    <li><img src=${filtro[0].imagem} alt=${filtro[0].tempero} height="250vh" width="250vw" ></li>
-    <li>Média de preço (100g) na feirinha: R$${filtro[0].mediaPreco},00 </li>
-    <li>É facilmente plantada na sua Hortinha? ${filtro[0].horta ? "Sim!" : "Nem tanto, mais fácil comprar."} </li>
-    <li>Combina bem com: ${filtro[0].combinacoes.join(", ")}</li>
-    </ul>
-    </section>`
-    }
+    //     boxTempero.innerHTML += `
+        
+    // <section>
+    // <ul> 
+    // <li><a href=${filtro[0].link}><strong>${filtro[0].tempero.toUpperCase()}</strong></a></li>
+    // <li><img src=${filtro[0].imagem} alt=${filtro[0].tempero} height="250vh" width="250vw" ></li>
+    // <li>Média de preço (100g) na feirinha: R$${filtro[0].mediaPreco},00 </li>
+    // <li>É facilmente plantada na sua Hortinha? ${filtro[0].horta ? "Sim!" : "Nem tanto, mais fácil comprar."} </li>
+    // <li>Combina bem com: ${filtro[0].combinacoes.join(", ")}</li>
+    // </ul>
+    // </section>`
+
+
+        filtro.map((tempero)=>{
+            console.log(tempero)
+            return boxTempero.innerHTML += `
+        
+            <section>
+            <ul> 
+            <li><a href=${tempero.link}><strong>${tempero.tempero.toUpperCase()}</strong></a></li>
+            <li><img src=${tempero.imagem} alt=${tempero.tempero} height="250vh" width="250vw" ></li>
+            <li>Média de preço (100g) na feirinha: R$${tempero.mediaPreco},00 </li>
+            <li>É facilmente plantada na sua Hortinha? ${tempero.horta ? "Sim!" : "Nem tanto, mais fácil comprar."} </li>
+            <li>Combina bem com: ${tempero.combinacoes.join(", ")}</li>
+            </ul>
+            </section>`
+        })
+}
 
 }
 
