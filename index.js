@@ -1,4 +1,4 @@
-// Projeto Integrador Web - Semana 5
+// Projeto Integrador Web - Semana 6
 
 // console.log(`
 // Tempero: ${tempero1.tempero.toUpperCase()};
