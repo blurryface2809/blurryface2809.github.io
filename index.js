@@ -109,7 +109,8 @@ const input = document.querySelector("#inputPesquisa")
 
 function buscarTemperos () {
     const filtro = temperosGerais.filter ((tempero) => {
-        return input.value.toLowerCase() === tempero.tempero
+        // return input.value.toLowerCase() === tempero.tempero
+        return tempero.tempero.includes(input)
     });
 
     if(input.value===""){
